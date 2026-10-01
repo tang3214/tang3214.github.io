@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>TikTok Login | FengMang Video Publisher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Feng<span>Mang</span> Video Publisher</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="callback">
+      <h2 id="cb-title">TikTok login</h2>
+      <p id="cb-text">This page receives the result of signing in with TikTok for the FengMang Video Publisher desktop app and returns you to the app running on your own computer.</p>
+      <p id="cb-action"></p>
+      <noscript><p>Please enable JavaScript so this page can return you to the FengMang Video Publisher app.</p></noscript>
+      <p class="meta">The authorization code is passed only to the app on your own computer (<code>http://127.0.0.1:8765</code>). This website does not store it.</p>
+    </section>
+    <section lang="zh-CN">
+      <div class="zh">
+        <p><strong>蜂芒视频发布助手</strong> TikTok 登录回调页：TikTok 授权完成后，本页会把授权结果交回您本机运行的蜂芒视频发布助手（<code>http://127.0.0.1:8765</code>）。请确保本机程序正在运行。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:tangjingcheng1997@outlook.com">Contact</a></p>
+      <p>&copy; 2026 SUJIAN CULTURE MEDIA LLC. FengMang Video Publisher (蜂芒视频发布助手).</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var LOCAL_CALLBACK = 'http://127.0.0.1:8765/callback';
+      var qs = window.location.search || '';
+      var params = new URLSearchParams(qs);
+      if (!params.get('code') && !params.get('error')) { return; }
+      var target = LOCAL_CALLBACK + qs;
+      var title = document.getElementById('cb-title');
+      var text = document.getElementById('cb-text');
+      var action = document.getElementById('cb-action');
+      if (params.get('error')) {
+        title.textContent = 'TikTok login was not completed';
+        text.textContent = 'TikTok returned: ' + params.get('error') + (params.get('error_description') ? ' (' + params.get('error_description') + ')' : '') + '. Returning to the app\u2026';
+      } else {
+        title.textContent = 'Returning to FengMang Video Publisher\u2026';
+        text.textContent = 'TikTok login succeeded. We are sending you back to the app running on your computer.';
+      }
+      var a = document.createElement('a');
+      a.className = 'btn';
+      a.href = target;
+      a.textContent = 'Return to the app';
+      action.appendChild(a);
+      var hint = document.createElement('span');
+      hint.className = 'meta';
+      hint.textContent = ' If nothing happens, make sure FengMang Video Publisher is running on this computer, then click the button.';
+      action.appendChild(hint);
+      // remove the code from this page's address bar / history before leaving
+      try { window.history.replaceState(null, '', window.location.pathname); } catch (e) {}
+      setTimeout(function () { window.location.replace(target); }, 600);
+    })();
+  </script>
+</body>
+</html>
