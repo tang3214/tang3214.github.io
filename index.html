@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FengMang Video Publisher | 蜂芒视频发布助手</title>
+  <meta name="description" content="FengMang Video Publisher (蜂芒视频发布助手) is a desktop tool that helps its user create short product videos with AI and publish them to their own TikTok account using the TikTok Content Posting API.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Feng<span>Mang</span> Video Publisher</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <h1>FengMang Video Publisher</h1>
+      <p class="zh-title" lang="zh-CN">蜂芒视频发布助手</p>
+      <p class="lead">A desktop tool that helps TikTok creators and sellers turn product information into short videos with AI, review them, and publish them to <strong>their own</strong> TikTok account using the official TikTok Content Posting API.</p>
+      <a class="btn" href="#how-it-works">How it works</a>
+      <a class="btn secondary" href="privacy.html">Privacy Policy</a>
+      <a class="btn secondary" href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="about">
+      <h2>What the app does</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Create</h3>
+          <p>Generate short product videos on your own computer with AI assistance, using product images, descriptions, and other materials you provide.</p>
+        </div>
+        <div class="card">
+          <h3>2. Review</h3>
+          <p>Preview each video, edit its caption, and choose privacy and interaction settings before anything is sent to TikTok.</p>
+        </div>
+        <div class="card">
+          <h3>3. Publish</h3>
+          <p>Upload and publish only the videos you explicitly select to your own TikTok account through the TikTok Content Posting API.</p>
+        </div>
+      </div>
+      <p>FengMang Video Publisher is designed for TikTok creators and small sellers (for example, sellers in Mexico and other markets) who regularly publish product videos and want a simpler, more consistent workflow.</p>
+    </section>
+
+    <section id="how-it-works">
+      <h2>How the app uses TikTok</h2>
+      <h3>Login Kit (authorization)</h3>
+      <p>You connect your TikTok account by signing in through TikTok's official authorization page (TikTok Login Kit). We never see or store your TikTok password. You can review exactly which permissions are requested before you approve.</p>
+
+      <h3>Requested scopes</h3>
+      <table>
+        <thead>
+          <tr><th>Scope</th><th>Why it is needed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>user.info.basic</code></td><td>To show which TikTok account is connected (display name and avatar) inside the app, so you can confirm you are publishing to the correct account.</td></tr>
+          <tr><td><code>video.upload</code></td><td>To upload a video you selected to your TikTok account (for example, as a draft for you to finish in TikTok).</td></tr>
+          <tr><td><code>video.publish</code></td><td>To publish a video you selected directly to your TikTok account with the caption and settings you chose.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Content Posting API (publishing)</h3>
+      <ul>
+        <li>The app only uploads videos that you explicitly choose and confirm. Nothing is posted automatically without your action.</li>
+        <li>Before posting, you can see the connected account, edit the caption, and select the privacy level and interaction settings offered by TikTok.</li>
+        <li>After posting, the app shows the publishing status returned by TikTok.</li>
+      </ul>
+
+      <h3>Your data</h3>
+      <ul>
+        <li>Access tokens are stored <strong>locally on your own computer only</strong>; they are not uploaded to our servers.</li>
+        <li>We do not sell, rent, or share your TikTok data for advertising.</li>
+        <li>You can disconnect at any time from within the app or by revoking access in your TikTok account settings.</li>
+      </ul>
+      <p>Read the full <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
+    </section>
+
+    <section id="zh" lang="zh-CN">
+      <div class="zh">
+        <h2>中文简介</h2>
+        <p><strong>蜂芒视频发布助手</strong>是一款桌面工具，帮助 TikTok 创作者和卖家（例如墨西哥等市场的卖家）利用 AI 生成商品短视频，并通过 TikTok 官方 Content Posting API 发布到<strong>用户本人</strong>的 TikTok 账号。</p>
+        <h3>主要功能</h3>
+        <ul>
+          <li><strong>生成：</strong>根据用户提供的商品图片、描述等素材，在本地借助 AI 生成短视频。</li>
+          <li><strong>审核：</strong>发布前可预览视频、编辑文案、选择隐私与互动设置。</li>
+          <li><strong>发布：</strong>仅上传和发布用户明确选择并确认的视频。</li>
+        </ul>
+        <h3>TikTok 授权与权限</h3>
+        <ul>
+          <li>通过 TikTok Login Kit 官方授权页面登录，我们不会获取或保存您的 TikTok 密码。</li>
+          <li><code>user.info.basic</code>：显示已连接账号的昵称和头像，便于确认发布账号。</li>
+          <li><code>video.upload</code>：将您选择的视频上传到您的 TikTok 账号。</li>
+          <li><code>video.publish</code>：将您选择的视频按您设置的文案和选项直接发布。</li>
+        </ul>
+        <h3>数据说明</h3>
+        <ul>
+          <li>访问令牌（Access Token）仅保存在您本人电脑本地。</li>
+          <li>我们不出售用户数据。</li>
+          <li>您可随时在应用内断开连接，或在 TikTok 账号设置中撤销授权。</li>
+        </ul>
+        <p>详见 <a href="privacy.html">隐私政策</a> 与 <a href="terms.html">服务条款</a>（英文为准）。</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Questions, feedback, or data requests: <a href="mailto:tangjingcheng1997@outlook.com">tangjingcheng1997@outlook.com</a></p>
+      <p class="meta">FengMang Video Publisher is an independent application and is not affiliated with, endorsed by, or sponsored by TikTok or ByteDance. TikTok is a trademark of its respective owner.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:tangjingcheng1997@outlook.com">Contact</a></p>
+      <p>&copy; 2026 FengMang Video Publisher (蜂芒视频发布助手)</p>
+    </div>
+  </footer>
+</body>
+</html>
